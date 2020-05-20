@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using PopoErEnLuder.Models;
+using System.IO;
 
 namespace PopoErEnLuder
 {
@@ -27,8 +28,10 @@ namespace PopoErEnLuder
         {
             services.AddControllersWithViews();
 
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "database");
+
             services.AddDbContext<PopoErEnLuderContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("PopoErEnLuderContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("TestConnection").Replace("[test]", path)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
