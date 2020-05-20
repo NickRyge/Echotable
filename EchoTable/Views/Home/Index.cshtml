@@ -18,9 +18,10 @@
             <tr>
                 <td>
                     <h2>@Html.DisplayFor(modelItem => item.Header)</h2>
-                    @if (item.imgAdress != null) {
+                    @if (item.imgAdress != null)
+                    {
                         <br>
-                        <img src="@Html.DisplayFor(modelItem => item.imgAdress)" class="responsive"/>
+                        <img src="@Html.DisplayFor(modelItem => item.imgAdress)" class="responsive" />
                         <br>
                     }
                     <br>
