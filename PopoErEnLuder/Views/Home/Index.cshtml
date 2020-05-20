@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PopoErEnLuder.Models.Post>
+
+@{
+    ViewData["Title"] = "Opslagstavle";
+}
+
+<h1>Oversigt</h1>
+
+<p>
+    <a asp-action="Create">Opret opslag</a>
+</p>
+
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <h2>@Html.DisplayFor(modelItem => item.Header)</h2>
+                    @if (item.imgAdress != null) {
+                        <br>
+                        <img src="@Html.DisplayFor(modelItem => item.imgAdress)" class="responsive"/>
+                        <br>
+                    }
+                    <br>
+                    @Html.DisplayFor(modelItem => item.Content)
+                    <br>
+                    <br>
+                    @Html.DisplayFor(modelItem => item.TimeStamp) - <a asp-action="Edit" asp-route-id="@item.Id">Rediger</a> - <a asp-action="Delete" asp-route-id="@item.Id">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
