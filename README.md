@@ -6,3 +6,6 @@ The SQL server and website is hosted internally through ISSExpress.
 
 **In order for the SQL scaffolding to work, you'll need to Update-Database.**
 
+I'm not uploading mine.
+
+This will create a database-image somewhere on your garbage computer, which the scaffolding will use.
